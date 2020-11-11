@@ -1,0 +1,430 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+html, body{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+#root{
+    width: 100vw;
+}
+.navigation{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    box-shadow: 1px 1px 12px rgb(201, 201, 201);
+}
+.logo{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: tesla;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.links{
+    display: grid;
+    place-content: center;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient( to right,rgba(11, 1, 68, 0.1), rgba(7, 52, 70, 0.9)) ,url(images/card.jpg);
+    background-size: cover;
+    display: none;
+}
+.links a, .links li{
+    color: #aaa;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    transition: transform .5s;
+}
+.links a:hover, .links li:hover{
+    color: #ccc;
+    transform: scale(1.1);
+}
+.links .copyright{
+    color: white;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1rem;
+    position: absolute;
+    bottom: 15px;
+left: 15px;
+}
+.open, .close{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    /* background-color: red; */
+}
+.active span{
+    color: rgb(0, 255, 242);
+}
+
+.main{
+    z-index: 0;
+}
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+}
+.firstHalf{
+    height: 50%;
+    display: flex;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(245, 246, 248),
+        rgb(212, 213, 215) );
+}
+.welcome .left{
+    width: 60vw;display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+.welcome .left .title{
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+.welcome .left .text{
+    color: #333;
+    font-size: .95rem;
+    margin: 20px 0;
+}
+.welcome .left .button{
+    box-shadow: 2px 2px 12px #aaa;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: rgb(238, 255, 255);
+    cursor: pointer;
+}
+.welcome .right img{
+    width: 40vw;
+    height: 60vh;
+}
+.secondHalf{
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.secondHalf > div{
+    width: 25vw;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 1px 1px 12px #aaa, 2px 2px 30px #aaa;
+}
+.secondHalf img{
+    width: 50px;
+}
+.secondHalf .title{
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: capitalize;
+}
+.secondHalf .desc{
+    color: #333;
+    margin: 20px 0;
+}
+.inner{
+    width: 90%;
+    color: rgb(46, 46, 46);
+    margin: auto;
+    padding: 20px;
+}
+.inner p:first-child{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.inner p:last-child{
+    color: rgb(34, 34, 34);
+    font-size: 1rem;
+    line-height: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.projects{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    color: rgb(202, 202, 202);
+}
+.projects .tit{
+    width: 100vw;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: auto;
+    color: black;
+}
+.project1, .project2{
+    width: 300px;
+    height: 200px;
+}
+.project1{
+    background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(construction/pexels-pixabay-209272.jpg);
+    background-size: contain;
+}
+.project2{
+    background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(construction/pexels-pixabay-159045.jpg);
+    background-size: contain;
+}
+.project1, .project2{
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 4px;
+    margin: 10px;
+    text-align: center;
+    background-color: rgb(16, 13, 46);
+    display: grid;
+    place-content: center;
+    transition: background-image 1s;
+}
+.project1:hover{
+    transform: scale(1.03);
+}
+.project1 p, .project2 p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    padding: 10px;
+}
+.footer{
+    color: black;
+    padding: 50px;
+    height: 80vh;
+    box-shadow: 0px -2px 12px rgb(201, 201, 201);
+}
+.top-in-footer{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding-bottom: 30px;
+    height: 50%;
+}
+.logo-bottom{
+    font-size: 1.5rem;
+    font-family: tesla;
+    position: absolute;
+    left: 50px;
+}
+.logo-bottom p{
+    font-size: .9rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.bottom-in-footer .copy{
+    text-align: center;
+    font-weight: bold;
+}
+.bottom-in-footer .social-links{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    margin-bottom: 5px;
+}
+.social-links img{
+    width: 35px;
+    border: 1px solid rgb(0, 255, 255);
+    border-radius: 50%;
+    padding: 3px;
+    margin: 5px;
+}
+.bottom-link{
+    display: flex;
+    margin-left: auto;
+}
+.bottom-link li{
+    margin: 7px;
+}
+.top-in-footer .first,
+.top-in-footer .second{
+    font-size: .9rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 30px;
+}
+.bottom-in-footer{
+    display: grid;
+    place-content: center;
+    height: 50%;
+
+}
+
+
+
+
+@media (min-width: 1000px){
+    .navigation{
+        background-size: cover;
+        padding: 0px 20px;
+    }
+    .links{
+        display: flex;
+        width: auto;
+        height: auto;
+        position: static;
+        margin: auto;
+        background-image: none;
+    }
+    .links li, .links a{
+        margin-right: 10px;
+    }
+    .open, .close{
+        display: none;
+    }
+    .copyright{
+        display: none;
+    }
+}
+
+/* @main mobile phone size rules */
+
+@media (max-width: 400px){
+    .firstHalf{
+        display: flex;
+        flex-direction: column;
+        background-image: linear-gradient(
+            to bottom,
+            rgb(245, 246, 248, .8),
+            rgb(212, 213, 215, .8) ), url(construction/imgtop.jpg);
+        background-size: cover;
+    }
+    .welcome .left{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        place-items: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+    .welcome .left .title{
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    .welcome .left .text{
+        color: #333;
+        font-size: .95rem;
+        margin: 20px 0;
+    }
+    .welcome .left .button{
+        box-shadow: 2px 2px 12px #aaa;
+        border-radius: 20px;
+        padding: 10px 20px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        font-size: .8rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        background-color: rgb(238, 255, 255);
+        cursor: pointer;
+    }
+    .welcome .right img{
+        display: none;
+    }
+    .secondHalf{
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        padding: 20px 5px;
+        text-align: center;
+        flex-direction: column;
+    }
+    .secondHalf > div{
+        width: 90%;
+        padding: 20px;
+        box-shadow: 1px 1px 12px #aaa, 2px 2px 30px #aaa;
+    }
+    .secondHalf img{
+        width: 50px;
+    }
+    .secondHalf .title{
+        font-weight: bold;
+        font-size: 1rem;
+        margin: 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-transform: capitalize;
+    }
+    .secondHalf .desc{
+        color: #333;
+        margin: 20px 0;
+    }
+    .inner p:first-child span{
+        display: none;
+    }
+
+    .projects{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 0;
+    }
+    .projects .tit{
+        width: 100vw;
+        height: auto;
+        margin: 0 20px;
+    }
+    .project1, .project2{
+        width: 90%;
+        height: 200px;
+    }
+}
+@media (max-width: 600px){
+    .top-in-footer{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid rgb(0, 0, 0);
+        padding-bottom: 10px;
+    }
+    .logo-bottom{
+        font-size: 1.5rem;
+        font-family: tesla;
+        position: static;
+        margin: 0px;
+
+    }
+    .logo-bottom p{
+       display: none;
+    }
+    .bottom-link{
+        display: flex;
+        justify-content: center;
+        margin: 20px 0 0 0;
+        text-align: center;
+
+    }
+}
